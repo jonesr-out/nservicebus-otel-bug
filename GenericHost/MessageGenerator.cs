@@ -22,7 +22,6 @@ class MessageGenerator : BackgroundService
             {
                 var sendOptions = new SendOptions();
                 sendOptions.DelayDeliveryWith(TimeSpan.FromMilliseconds(100));
-                //sendOptions.StartNewTraceOnReceive();
                 sendOptions.RouteToThisEndpoint();
 
                 await messageSession.Send(new MyMessage { Number = number++ }, sendOptions, cancellationToken);
