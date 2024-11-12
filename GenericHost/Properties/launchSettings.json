@@ -3,17 +3,6 @@
     "GenericHost": {
       "commandName": "Project",
       "environmentVariables": {
-        "NETCORE_ENVIRONMENT": "Local",
-        "DOTNET_ENVIRONMENT": "Development",
-        "DOTNET_STARTUP_HOOKS": "OpenTelemetry.AutoInstrumentation.StartupHook",
-        "OTEL_DOTNET_AUTO_INSTRUMENTATION_ENABLED": "true",
-        "OTEL_DOTNET_AUTO_RULE_ENGINE_ENABLED": "false",
-        "OTEL_TRACES_SAMPLER": "parentbased_traceidratio",
-        "OTEL_TRACES_SAMPLER_ARG": "1,0",
-        "OTEL_LOG_LEVEL": "warn",
-        "OTEL_SERVICE_NAME": "out-it-dev-stratos-policyadmin-back-end-worker",
-        "OTEL_EXPORTER_OTLP_ENDPOINT": "https://elastic-apm.out.co.za/",
-        "OTEL_RESOURCE_ATTRIBUTES": "deployment.environment=Local"
       }
     }
   }

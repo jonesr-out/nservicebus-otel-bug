@@ -12,25 +12,25 @@ var builder = Host.CreateApplicationBuilder(args);
 
 #region otel-config
 
-//builder.Services.AddOpenTelemetry()
-//    .ConfigureResource(resourceBuilder => resourceBuilder.AddService(EndpointName))
-//    .WithTracing(builder =>
-//    {
-//        builder.AddSource("NServiceBus.*");
-//        //builder.AddConsoleExporter();
-//    });
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(resourceBuilder => resourceBuilder.AddService(EndpointName))
+    .WithTracing(builder =>
+    {
+        builder.AddSource("NServiceBus.*");
+        builder.AddConsoleExporter();
+    });
 
 #endregion
 
 #region otel-logging
 
-//builder.Logging.AddOpenTelemetry(loggingOptions =>
-//{
-//    loggingOptions.IncludeFormattedMessage = true;
-//    loggingOptions.IncludeScopes = true;
-//    loggingOptions.ParseStateValues = true;
-//    loggingOptions.AddConsoleExporter();
-//});
+builder.Logging.AddOpenTelemetry(loggingOptions =>
+{
+    loggingOptions.IncludeFormattedMessage = true;
+    loggingOptions.IncludeScopes = true;
+    loggingOptions.ParseStateValues = true;
+    loggingOptions.AddConsoleExporter();
+});
 
 #endregion
 
